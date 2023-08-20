@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>OpenLayers WMS Example</title>
+
+    <link rel="stylesheet" href="https://openlayers.org/en/v4.6.5/css/ol.css" type="text/css">
+    <script src="https://openlayers.org/en/v4.6.5/build/ol.js"></script>
+    <style>
+        #map {
+          display: inline-block;
+          border: 5px solid black;
+          padding: 15px;
+          height: 900px;
+          width: 900px;
+        }
+      </style>
+</head>
+<body>
+    <div id="map" class="map"></div>
+    <script>
+        var layer = new ol.layer.Tile({
+            source: new ol.source.OSM()
+        });
+        var wmsLayer = new ol.layer.Image({
+            source: new ol.source.ImageWMS({
+                url: 'http://localhost:8080/geoserver/Pak_adm3/wms',
+                params: {'LAYERS': 'Pak_adm3:pak_adm3'},
+                serverType: 'geoserver'
+            })
+        });
+
+        var pak=new ol.layer.Tile({
+            title: 'pak',
+            source: new ol.source.TileWMS({
+                url: 'http://localhost:8080/geoserver/Pak_adm3/wms?',
+                params: {'LAYERS': 'Pak_adm3:pak_adm3'},
+                serverType: 'geoserver'
+            })
+        });
+
+        var map = new ol.Map({
+            target: 'map',
+            layers: [layer, wmsLayer,pak],
+            view: new ol.View({
+                center: [30,70],
+                zoom: 5
+            })
+        });
+    </script>
+</body>
+</html>

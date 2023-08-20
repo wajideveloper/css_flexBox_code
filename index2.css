@@ -1,0 +1,56 @@
+body {
+    font-family: sans-serif;
+}
+
+h1{
+    border: 2px solid red;
+}
+
+.my-headind
+
+p{
+    font-size: 20px;
+    /* line-height: 40px;
+    word-spacing: 10px;
+    letter-spacing: 8px;
+    font-weight: 700; */
+
+    border: 2px solid black;
+    /* padding-left: 10px;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 10p; */
+    /* padding: 20px 60px 20px 15px; */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+a{
+    /* without using display property inline element
+    dont have any affect by increaing width and height */
+
+    /* display: block; */
+    display: inline-block;
+    border: 2px solid red;
+    width: 100px;
+    height: 100px;
+    margin-top: 50px;
+}
+
+/* calculating specificity */
+check these things in the style start from end?
+/* inline-styling, id, classes, element (ul,li,etc)*/
+.fav{
+
+}
+/* 0,0,1,0 so spesificty is 10 */
+
+ul li.fac{
+
+}
+
+/* element=2
+classes=1
+id=0
+inline style= 0
+so specificty is 12 */

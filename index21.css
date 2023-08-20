@@ -1,0 +1,77 @@
+/* to remove default styling
+use universal styling * */
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+/* box-sizing */
+
+.box1{
+    border: 20px solid red;
+    margin-bottom: 10px;
+    width: 300px;
+    box-sizing: 300px;
+    padding: 20px;
+}
+
+.box2{
+    border: 20px solid red;
+    width: 300px;
+}
+
+/* psaudo classes */
+/* link, visiited, hover, active
+pseudo classes mdn search for detail */
+/* if your using all of these then use in the above order
+ */
+
+a:link{
+    color: orange;
+}
+
+a:visited{
+    color: blueviolet;
+}
+a:hover{
+    color: black;
+   }
+a:active{
+    color:brown
+}
+
+/* pseudo classes for input filled */
+input:focus{
+
+}
+
+/* aghr phla child hy to karo warna nahi */
+p:first-child{}
+
+/* har parent ka jo pahla child ho body ky ander ya kisi bi 
+div ya header ya kisi or element ky ander us 
+pre style apply karo */
+p:first-of-type{}
+
+:last-child{}
+:last-of-type{}
+
+/* same as above */
+
+:nth-child(2){
+    jo apny parent ka 2nd child hy ya nahi
+}
+:nth-child(2n){
+    jo apny parent ka 2nd child hy ya nahi
+}
+:nth-child(2n+1){
+    jo apny parent ka 2nd child hy ya nahi
+}
+
+: nth-of-type(2){}
+
+: nth-of-type(2n){}
+
+ul li: nth-of-type(2n+1){}
